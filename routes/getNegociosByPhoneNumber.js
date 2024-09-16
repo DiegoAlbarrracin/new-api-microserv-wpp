@@ -5,7 +5,7 @@ const router = express.Router();
 // Ruta para obtener negocios por phoneNumber
 router.get('/getNegociosByPhoneNumber/:phoneNumber', (req, res) => {
   try {
-    const parametro = req.params.phoneNumber;
+    const parametro = req.params.phoneNumber; 
     connection.query(
         `SELECT n.neg_id,n.neg_fechacierre, n.neg_asunto, m.mon_codigo, n.neg_valor, n.cli_id, c.cli_nombre, n.usu_asig_id, u.usu_nombre, u.usu_number
         FROM negocios n

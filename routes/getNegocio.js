@@ -5,7 +5,7 @@ const router = express.Router();
 // Ruta para obtener negocio por idNegocio
 router.get('/getNegocio/:idNegocio', (req, res) => {
   try {
-    const parametro = req.params.idNegocio;
+    const parametro = req.params.idNegocio; 
     connection.query(
       `select n.neg_id,n.neg_asunto ,n.neg_valor ,n.neg_estado ,c.cli_nombre ,c2.con_nombre ,m.mon_codigo,e2.eta_nombre,p.pip_nombre  from negocios n
       inner join clientes c ON c.cli_id =n.cli_id

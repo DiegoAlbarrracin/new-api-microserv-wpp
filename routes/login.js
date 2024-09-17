@@ -13,7 +13,7 @@ router.post('/login', (req, res) => {
     const { username, password } = req.body;
 
     // Simular la validación del usuario
-    const storedUser = { username: 'admin', password: bcrypt.hashSync('1234', 10) }; // Contraseña hasheada
+    const storedUser = { username: process.env.STORED_USERNAME, password: bcrypt.hashSync(process.env.STORED_PASSWORD, 10) }; // Contraseña hasheada
 
     if (username === storedUser.username && bcrypt.compareSync(password, storedUser.password)) {
       const token = jwt.sign({ username: storedUser.username }, process.env.JWT_SECRET, { expiresIn: '1h' });

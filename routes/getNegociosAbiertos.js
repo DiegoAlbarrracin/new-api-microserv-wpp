@@ -2,7 +2,7 @@ const express = require('express');
 const connection = require("../db/connection"); 
 const router = express.Router();
 
-// Ruta para obtener negocios abiertos (neg_estado = 0)
+// Ruta para obtener negocios abiertos (neg_estado = 0) 
 router.get('/getNegociosAbiertos', (req, res) => {
   try {
     connection.query(
